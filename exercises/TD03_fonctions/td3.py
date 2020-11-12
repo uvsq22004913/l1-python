@@ -79,8 +79,7 @@ def proportionTemps(temps, proportion):
     secondes = tempsSecondes(temps)
     propSecondes = int(secondes * proportion)
     propTemps = secondesTemps(propSecondes)
-    propTemps = afficheTemps(propTemps)
-    return(propTemps)
+    return(afficheTemps(propTemps))
 
 
 def tempsDate(temps):
@@ -141,8 +140,8 @@ def nombreBisextile(jour):
 
 print(bisextile(20000))
 
+
 """
-temps = (2, 0, 36, 0)
 secondes = 335435
 print(tempsSecondes(temps), "secondes")
 temps = secondesTemps(secondes)
@@ -153,3 +152,4 @@ proportionTemps(temps, 0.2)
 temps = secondesTemps(1000000000)
 afficheDate(temps)
 """
+temps = (2, 0, 36, 0)
