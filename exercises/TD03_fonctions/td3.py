@@ -130,7 +130,6 @@ def nombreBisextile(jour):
     date = tempsDate(secondesTemps(jour * 3600 * 24))
     anneeBisextile = 0
     year = date[0]
-    print("année = ", year)
     for i in range(2020, year+1):
         if i % 4 == 0 and i %100 != 0 or i % 400 == 0 :
             anneeBisextile += 1
@@ -138,7 +137,12 @@ def nombreBisextile(jour):
             pass
     return anneeBisextile
 
-print(bisextile(20000))
+
+def tempsDateBisextile(temps):
+    date = tempsDate(temps)
+    jourBisextile = date[1] + nombreBisextile(date[1])
+    date = (date[0], jourBisextile, date[2], date[3], date[4])
+    return date
 
 
 """
@@ -152,4 +156,8 @@ proportionTemps(temps, 0.2)
 temps = secondesTemps(1000000000)
 afficheDate(temps)
 """
-temps = (2, 0, 36, 0)
+#temps = (2, 0, 36, 0)
+temps = secondesTemps(2000000000)
+afficheDate(tempsDateBisextile(temps))
+print("\n")
+afficheDate(tempsDate(temps))
