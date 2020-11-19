@@ -163,4 +163,4 @@ afficheDate(tempsDateBisextile(temps))
 print("\n")
 afficheDate(tempsDate(temps))
 """
-
+temps = (2, 0, 36, 0)
