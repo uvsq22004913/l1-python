@@ -156,8 +156,11 @@ proportionTemps(temps, 0.2)
 temps = secondesTemps(1000000000)
 afficheDate(temps)
 """
+"""
 #temps = (2, 0, 36, 0)
 temps = secondesTemps(2000000000)
 afficheDate(tempsDateBisextile(temps))
 print("\n")
 afficheDate(tempsDate(temps))
+"""
+
