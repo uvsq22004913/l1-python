@@ -14,9 +14,6 @@ canvas = tk.Canvas(racine, width = width, height = height, bg = 'black')
 canvas.grid(column = 1, row = 1)
 
 for i in range(0, ((width//2) // decalage) - 1):
-    cercle = canvas.create_oval(i * decalage, i * decalage, width - i * decalage, width - i * decalage, fill=couleur[cpt]) 
-    cpt += 1
-    if cpt > 5:
-        cpt = 0
+    cercle = canvas.create_oval(i * decalage, i * decalage, width - i * decalage, width - i * decalage, fill=couleur[i%6]) 
 
 racine.mainloop()
