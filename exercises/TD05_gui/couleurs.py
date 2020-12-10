@@ -9,15 +9,17 @@ def get_color(r, g, b):
 
 
 def draw_pixel(i, j, color):
-    canvas.create_rectangle((i, j)*2, outline='', fill='white')
+    canvas.create_rectangle((i, j)*2, outline='', fill=color)
 
 
 def ecran_aleatoire():
-    r = randint(0, 255)
-    g = randint(0, 255)
-    b = randint(0, 255)
-    color = get_color(r, g, b)
-    canvas.config(bg = color)
+    for i in range(l):
+        for j in range(l):
+            r = randint(0, 255)
+            g = randint(0, 255)
+            b = randint(0, 255)
+            color = get_color(r, g, b)
+            draw_pixel(i, j, color)      
 
 
 def degrade_gris():
@@ -36,11 +38,12 @@ def degrade_2D():
 ##################################### Variables #####################################
 
 width, height = 511, 255
+l = 255
 
 ##################################### Fenetre #####################################
 
 racine = tk.Tk()
-canvas = tk.Canvas(racine, width = 255, height = 255, bg = 'black')
+canvas = tk.Canvas(racine, width = l, height = l, bg = 'black')
 canvas.grid(column = 1, row = 0, rowspan = 12)
 
 aleatoire = tk.Button(racine, text = "Aléatoire", font = ("helvetica", "26"), command = ecran_aleatoire)
